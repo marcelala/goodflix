@@ -9,7 +9,7 @@ import { useAuthentication } from "../../state/AuthenticationContext";
 import { useUserData } from "../../state/UserDataContext";
 import { getDocument } from "../../firebaseServices/firestore";
 
-export default function Login() {
+export default function SignIn() {
   // Global state
   const history = useHistory();
   const { setUserData } = useUserData();
