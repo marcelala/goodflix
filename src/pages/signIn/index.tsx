@@ -44,21 +44,27 @@ export default function SignIn() {
     <>
       {" "}
       <section id="auth">
-        <h1>Log in</h1>
-        <form className="form form-login" onSubmit={handleLogin}>
+        <form className="sign-form-wrapper" onSubmit={handleLogin}>
+          <h1 className="sign-form-title">Log in</h1>
           <FormFields fields={loginFields} state={[form, setForm]} />
-          <div className="auth-links">
-            <Link to={"/recovery"}>
-              <small>Forgot your password?</small>
-            </Link>
-            <small>
-              Not a member yet? <Link to="/register">Sign up here</Link>
-            </small>
-            <p>{errorMessage}</p>
-          </div>
-          <button type="submit" className="btn btn-primary">
+          <Link to={"/recovery"} className="sign-form-link">
+            <small>Need help?</small>
+          </Link>
+
+          <p>{errorMessage}</p>
+          <button type="submit" className="sign-form-Button">
             Login
           </button>
+          <small>
+            New to Netflix?{" "}
+            <Link to="/register" className="sign-form-link">
+              Sign up now
+            </Link>
+          </small>
+          <small>
+            This page is protected by Google reCAPTCHA to ensure you're not a
+            bot.
+          </small>
         </form>
       </section>
     </>

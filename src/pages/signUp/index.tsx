@@ -61,7 +61,7 @@ export default function SignUp() {
           <FormFields fields={signUpFields} state={[form, setForm]} />
           <div className="auth-links">
             <small>
-              Already a member? <Link to="/login">Log in here</Link>
+              Already a member? <Link to="/">Log in here</Link>
             </small>
             <p>{errorMessage}</p>
           </div>

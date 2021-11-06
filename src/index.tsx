@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./styles/index.sass";
 import App from "./App";
 import { AuthenticationProvider } from "state/AuthenticationContext";
 import { DataProvider } from "state/DataContext";

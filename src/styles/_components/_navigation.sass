@@ -1,0 +1,58 @@
+.navigation
+  width: 100%
+  z-index: 9999
+  position: sticky
+  grid-area: nav
+  max-width: 1850px
+  display: flex
+  justify-content: space-between
+  margin-bottom: 175px
+  margin-right: auto
+  margin-left: auto
+
+  .nav-content
+    height: 3.25rem
+    overflow: hidden
+  ul
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: row
+    align-content: center
+    align-items: center
+    justify-content: space-between
+    padding: $space-x-small
+    margin: 0
+  img
+    padding: 0
+    max-height: 2.5rem
+    margin: 0
+    height: 32px
+    width: 108px
+    @include hover-lift
+
+  .btn
+    display: block
+    background-color: #e50914
+    width: 84px
+    height: fit-content
+    color: #fff
+    border: 0
+    font-size: 15px
+    border-radius: 3px
+    padding: 8px 17px
+    cursor: pointer
+    @include respond(tablet)
+      display: block
+
+  li
+    color: #fff
+    margin-left: 25px
+    cursor: pointer
+    @include hover-lift
+
+  hr
+    margin: 0
+    box-shadow: 0 0 5px .5px $dark-5
+    border: none
+
