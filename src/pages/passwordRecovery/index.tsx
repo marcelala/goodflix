@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 // Project files
 import FormFields from "../../components/FormFields";
 import { sendRecoveryMail } from "../../firebaseServices/authentication";
+import background from "../../assets/images/authBanner.jpg";
 
 export default function PasswordRecovery() {
   const history = useHistory();
@@ -28,15 +29,20 @@ export default function PasswordRecovery() {
   }
 
   return (
-    <section id={"auth"}>
-      <h1>Password Recovery</h1>
-      <form className="form form-recovery" onSubmit={handleRecoveryRequest}>
-        <FormFields fields={recoveryFields} state={[form, setForm]} />
-        <p>{errorMessage}</p>
-        <button className="btn-primary" type="submit">
-          Reset password
-        </button>
-      </form>
-    </section>
+    <>
+      <div className="background-wrapper">
+        <img src={background} alt={"thumbnail of various movies"} />
+      </div>
+      <section id={"auth"}>
+        <form className="form-wrapper" onSubmit={handleRecoveryRequest}>
+          <h1 className="form-title">Password Recovery</h1>
+          <FormFields fields={recoveryFields} state={[form, setForm]} />
+          <p>{errorMessage}</p>
+          <button className="btn-form" type="submit">
+            Reset password
+          </button>
+        </form>
+      </section>
+    </>
   );
 }
