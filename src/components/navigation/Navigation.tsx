@@ -4,22 +4,8 @@ import { logOut } from "../../firebaseServices/authentication";
 import logo from "assets/images/logo.svg";
 import Icon from "../Icon";
 export default function Navigation() {
-  const { isAuthenticated, setIsAuthenticated } = useAuthentication();
+  const { setIsAuthenticated } = useAuthentication();
   const history = useHistory();
-
-  const signIn = (
-    <li>
-      <NavLink to="login">
-        <Icon fileName={"sign-in"} />
-      </NavLink>
-    </li>
-  );
-  const signOut = (
-    <li onClick={onLogout}>
-      <Icon fileName={"sign-out"} />
-    </li>
-  );
-  const signToShow = isAuthenticated ? signOut : signIn;
 
   // Methods
   async function onLogout() {
@@ -28,7 +14,7 @@ export default function Navigation() {
     history.push("/");
   }
   return (
-    <nav className="navigation">
+    <nav className="navigation nav-auth">
       <div className={"nav-content"}>
         <ul>
           <li>
@@ -36,25 +22,24 @@ export default function Navigation() {
               <img src={logo} alt="netflix" />
             </NavLink>
           </li>
-          {isAuthenticated && (
-            <>
-              <li>
-                <NavLink to="/home">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/home">Series</NavLink>
-              </li>
-              <li>
-                <NavLink to="/home">Films</NavLink>
-              </li>
-              <li>
-                <NavLink to="/home">New & Popular</NavLink>
-              </li>
-              <li>
-                <NavLink to="/home">My List</NavLink>
-              </li>
-            </>
-          )}
+          <li>
+            <NavLink to="/browse">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/series">Series</NavLink>
+          </li>
+          <li>
+            <NavLink to="/films">Films</NavLink>
+          </li>
+          <li>
+            <NavLink to="/new">New & Popular</NavLink>
+          </li>
+          <li>
+            <NavLink to="/my-list">My List</NavLink>
+          </li>
+          <li onClick={onLogout}>
+            <Icon fileName={"sign-out"} />
+          </li>
         </ul>
       </div>
     </nav>

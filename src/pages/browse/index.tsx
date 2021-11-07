@@ -4,8 +4,10 @@ export default function Browse() {
   const { userData } = useUserData();
 
   return (
-    <main>
+    <main id={"browse"} className="browse">
       <Hero />
+
+      <h1>My list</h1>
     </main>
   );
 }
