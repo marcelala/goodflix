@@ -1,5 +1,7 @@
+import { Profile } from "./iProfile";
+
 export default interface iUser {
-  id: string;
+  uid: string;
   fullName: string;
   email: string;
   city: string;
@@ -7,8 +9,6 @@ export default interface iUser {
   imageURL: string;
   userRole: string;
   phone: string;
-  links: Array<any>;
-  topics: Array<any>;
-  favorites: Array<any>;
+  profiles?: Array<Profile>;
   isActive: boolean;
 }

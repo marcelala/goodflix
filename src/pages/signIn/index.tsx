@@ -17,7 +17,7 @@ export default function SignIn() {
   // Global state
   const history = useHistory();
   const { setUserData } = useUserData();
-  const { setIsAuthenticated, isAuthenticated } = useAuthentication();
+  const { setIsAuthenticated, isAuthenticated, uid } = useAuthentication();
   // Local state
   const loginFields = require("./fields-login.json");
   const [form, setForm] = useState({ email: "", password: "" });
@@ -29,7 +29,7 @@ export default function SignIn() {
     e.preventDefault();
     setErrorMessage("");
     const account = await login({ email, password });
-    account.setIsAuthenticated
+    account.isAuthenticated
       ? await onSuccess(account.payload)
       : onFailure(account.payload);
   }
@@ -38,11 +38,14 @@ export default function SignIn() {
     const document = await getDocument("userData", uid);
     setUserData(document);
     setIsAuthenticated(true);
-    history.push("/home");
+    if (rememberMe) localStorage.setItem("uid", uid);
+    history.push("/browse");
   }
 
-  function onFailure(message: string) {
-    setErrorMessage(message);
+  function onFailure(error: any) {
+    setErrorMessage(error);
+    console.log(error);
+    history.push("/");
   }
 
   return (

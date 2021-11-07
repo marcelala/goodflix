@@ -1,16 +1,13 @@
 import iUser from "../interfaces/iUser";
 
 export const newUser: iUser = {
-  id: "",
+  uid: "",
   fullName: "",
   email: "",
   password: "",
   phone: "",
   city: "",
   imageURL: "",
-  links: [],
-  topics: [],
-  favorites: [],
   userRole: "",
   isActive: true,
 };

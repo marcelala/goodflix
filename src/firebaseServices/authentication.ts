@@ -10,7 +10,6 @@ import {
 } from "firebase/auth";
 //project files
 import { authInstance } from "./firebase";
-import { createDocument, createDocumentWithId } from "./firestore";
 
 type iProps = {
   email: string;
@@ -27,10 +26,8 @@ export async function register({ email, password }: iProps) {
     );
     account.isCreated = true;
     account.payload = authCredential.user.uid;
-    await createDocument("participants", { email, account });
-  } catch (error) {
+  } catch (error: any) {
     console.error("authentication.js error", error);
-    // @ts-ignore
     account.payload = error.code;
   }
   return account;
@@ -48,12 +45,11 @@ export async function login({ email, password }: iProps) {
       email,
       password
     );
-    account.isAuthenticated = true;
     account.payload = authCredential.user.uid;
-  } catch (error) {
+    account.isAuthenticated = true;
+  } catch (error: any) {
     console.error("authentication.js error", error);
     alert("Login failed");
-    // @ts-ignore
     account.payload = error.code;
   }
   return account;
@@ -66,9 +62,8 @@ export async function logOut() {
     await signOut(authInstance);
     account.isSignedOut = true;
     account.payload = "Signed out successfully";
-  } catch (error) {
+  } catch (error: any) {
     console.error("authentication.js error", error);
-    // @ts-ignore
     account.payload = error.code;
   }
 
@@ -82,8 +77,7 @@ export async function sendRecoveryMail(email: string) {
     await sendPasswordResetEmail(authInstance, email);
     account.payload = "Password reset email sent! Check your inbox";
     account.isReset = true;
-  } catch (error) {
-    // @ts-ignore
+  } catch (error: any) {
     account.payload = error.code;
   }
   return account;
@@ -94,7 +88,7 @@ export async function updateCredentials(newPassword: string) {
   // @ts-ignore
   updatePassword(user, newPassword)
     .then(() => {})
-    .catch((error) => {
+    .catch((error: any) => {
       const errorCode = error.code;
       const errorMessage = error.message;
     });

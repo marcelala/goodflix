@@ -46,11 +46,12 @@ export default function SignUp() {
     await createDocumentWithId("userData", uid, newParticipant);
     setUserData(newParticipant);
     setIsAuthenticated(true);
-    history.push("/home");
+    history.push("/browse");
   }
 
   function onFailure(message: any) {
     setErrorMessage(message);
+    history.push("/register");
   }
 
   return (
