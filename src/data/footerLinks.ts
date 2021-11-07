@@ -1,4 +1,4 @@
-export const FOOTER_LINKS = [
+export const footerLinks = [
   { id: 1, text: "FAQ", url: "https://help.netflix.com/support/412" },
   { id: 2, text: "Help Center", url: "https://help.netflix.com/" },
   { id: 3, text: "Account", url: "https://www.netflix.com/youraccount" },
@@ -26,10 +26,5 @@ export const FOOTER_LINKS = [
     id: 16,
     text: "Legal Notices",
     url: "https://help.netflix.com/legal/notices",
-  },
-  {
-    id: 17,
-    text: "Roseflix Originals",
-    url: "https://www.netflix.com/ph/browse/genre/839338",
   },
 ];

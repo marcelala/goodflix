@@ -9,7 +9,7 @@ import { createDocumentWithId } from "../../firebaseServices/firestore";
 import { useUserData } from "../../state/UserDataContext";
 import { useAuthentication } from "../../state/AuthenticationContext";
 import { newUser } from "../../types/newUser";
-
+import background from "assets/images/authBanner.jpg";
 export default function SignUp() {
   // global state
   const { setUserData } = useUserData();
@@ -56,16 +56,22 @@ export default function SignUp() {
   return (
     <>
       <section id={"auth"}>
-        <h1>Create an account</h1>
-        <form className="form form-register" onSubmit={onSubmit}>
+        <div className="background-wrapper">
+          <img src={background} alt={"thumbnail of various movies"} />
+        </div>
+        <form className="form-wrapper" onSubmit={onSubmit}>
+          <h1 className="form-title">Join Netflix</h1>
           <FormFields fields={signUpFields} state={[form, setForm]} />
           <div className="auth-links">
             <small>
-              Already a member? <Link to="/">Log in here</Link>
+              Already a member?{" "}
+              <Link to="/" className="form-link">
+                Log in here
+              </Link>
             </small>
             <p>{errorMessage}</p>
           </div>
-          <button className="btn-primary">Create account</button>
+          <button className="btn-form">Create account</button>
         </form>
       </section>
     </>

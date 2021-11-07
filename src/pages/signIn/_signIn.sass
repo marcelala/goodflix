@@ -1,32 +1,41 @@
+.background-wrapper
+  background-size: cover
+  display: block
+  height: 100vh
+  overflow: hidden
+  direction: ltr
+  position: absolute
+  width: 100vw
+  opacity: 0.5
+  img
+    min-height: 100%
+    min-width: 100%
+    border: 0
+
 #auth
   display: flex
-  height: 83vh
-  position: absolute
-  background: url('../../assets/images/Home_Banner.jpg')
-  background-size: cover
-  background-position: 50% 50%
+  height: 100%
+  width: 100%
+  min-height: 100vh
+  margin: 0
+  background-color: transparent
 
-.sign-form-wrapper
+.form-wrapper
   display: flex
   flex-direction: column
-  min-height: 570px
+  height: 100%
+  width: 100%
+  min-width: 320px
+  min-height: 660px
   background-color: rgba(0, 0, 0, 0.75)
   border-radius: 5px
-  width: 100%
-  margin: auto
+  margin: 8rem auto
   max-width: 450px
   padding: 60px 68px 40px
-  margin-bottom: 100px
+  position: relative
 
 
-@media (max-width: 550px)
-  .sign-form-wrapper
-    padding: 40px 20px 40px
-    min-height: 500px
-
-
-
-.sign-form-title
+.form-title
   color: #fff
   font-size: 32px
   font-weight: bold
@@ -42,37 +51,24 @@
   padding: 15px 20px
 
 
-.sign-form-base
-  display: flex
-  flex-direction: column
-  max-width: 450px
-  width: 100%
 
 
 
-.sign-form-Button
-  background: #e50914
-  border-radius: 4px
-  font-size: 16px
-  font-weight: bold
-  margin: 0 0 12px
-  padding: 16px
-  border: 0
-  color: white
-  cursor: pointer
 
-.sign-form-Button:disabled
+.btn-form
+  @include button
+.btn-form:disabled
   opacity: 0.3
 
 
-.sign-form-text
-  color: #8c8c8c
-  font-size: 16px
-  font-weight: 500
+.form-help, small
+  font-size: 13px
+  font-weight: 300
+  color: rgb(179, 179, 179)
 
 
-.sign-form-link
-  color: #fff
+.form-link
+  color: rgb(179, 179, 179)
   text-decoration: none
   margin-right: 30px
   cursor: pointer
@@ -80,12 +76,6 @@
   margin-left: 5px
 
 
-.sign-form-link:hover
+.form-link:hover
   text-decoration: underline
 
-
-.sign-form-captcha
-  margin-top: 10px
-  font-size: 13px
-  line-height: normal
-  color: #8c8c8c

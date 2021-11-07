@@ -17,14 +17,17 @@ export default function InputCheckbox({ onChange, options, state }: iProps) {
   const inputReference = useRef<HTMLInputElement>(null);
 
   return (
-    <label>
+    <div className={"checkbox-container"}>
       <input
         checked={Boolean(state)}
         onChange={() => onChange(key, !state)}
         ref={inputReference}
         type="checkbox"
       />{" "}
-      {label}
-    </label>
+      <label>
+        <span className="label"> {label}</span>
+        <div className="helper"></div>
+      </label>
+    </div>
   );
 }

@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/src/firebase.env.ts
+/firestore.indexes.json
+/firebase.json
+/firestore.rules
+/.idea/goodflix.iml
+/src/styles/index.css
+/src/styles/index.css.map
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/prettier.xml
+/storage.rules
+/.idea/watcherTasks.xml

@@ -1,8 +1,8 @@
 import { NavLink, useHistory } from "react-router-dom";
-import { useAuthentication } from "../state/AuthenticationContext";
-import { logOut } from "../firebaseServices/authentication";
+import { useAuthentication } from "../../state/AuthenticationContext";
+import { logOut } from "../../firebaseServices/authentication";
 import logo from "assets/images/logo.svg";
-import Icon from "./Icon";
+import Icon from "../Icon";
 export default function Navigation() {
   const { isAuthenticated, setIsAuthenticated } = useAuthentication();
   const history = useHistory();
@@ -32,30 +32,31 @@ export default function Navigation() {
       <div className={"nav-content"}>
         <ul>
           <li>
-            <NavLink to="/">
-              <img src={logo} alt="bee in a beehive" />
+            <NavLink to="/" className="logo">
+              <img src={logo} alt="netflix" />
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/home">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/home">Series</NavLink>
-          </li>
-          <li>
-            <NavLink to="/home">Films</NavLink>
-          </li>
-          <li>
-            <NavLink to="/home">New & Popular</NavLink>
-          </li>
-          <li>
-            <NavLink to="/home">My List</NavLink>
-          </li>
-
-          {signToShow}
+          {isAuthenticated && (
+            <>
+              <li>
+                <NavLink to="/home">Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/home">Series</NavLink>
+              </li>
+              <li>
+                <NavLink to="/home">Films</NavLink>
+              </li>
+              <li>
+                <NavLink to="/home">New & Popular</NavLink>
+              </li>
+              <li>
+                <NavLink to="/home">My List</NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </div>
-      <hr />
     </nav>
   );
 }
