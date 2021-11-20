@@ -1,7 +1,35 @@
 #browse
   position: relative
-  @include sectionGrid
-
 
   #hero
     position: relative
+    color: white
+    object-fit: contain
+    height: 448px
+    margin: 0
+    .hero-contents
+      height: 190px
+      padding-top: 140px
+      margin-left: 30px
+      width: 45%
+      h1
+        font-size: 3rem
+        font-weight: 800
+        padding-bottom: .3rem
+      p
+        line-height: 1.3rem
+        padding-top: 1rem
+        font-size: .8rem
+        max-width: 360px
+        overflow: hidden
+
+      &-buttons
+        display: flex
+        flex-direction: row
+        margin-top: $space-medium
+        .play
+          background-color: white
+          color: $dark
+        .info
+          color: white
+          background-color: rgba(109, 109, 110, 0.7)
