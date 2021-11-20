@@ -16,7 +16,7 @@ const checkboxOptions = { key: "remember", label: "Remember me" };
 export default function SignIn() {
   // Global state
   const history = useHistory();
-  const { setUserData } = useUserData();
+  const { setUserData, userData } = useUserData();
   const { setIsAuthenticated, isAuthenticated, uid } = useAuthentication();
   // Local state
   const loginFields = require("./fields-login.json");
@@ -40,6 +40,7 @@ export default function SignIn() {
     setIsAuthenticated(true);
     if (rememberMe) localStorage.setItem("uid", uid);
     history.push("/browse");
+    return isAuthenticated;
   }
 
   function onFailure(error: any) {
