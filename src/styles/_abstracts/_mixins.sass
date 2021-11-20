@@ -126,13 +126,14 @@
 @mixin hover-lift()
   //box-shadow: 0em 0.3em 0.5em 0em rgba(black, 0.2)
   transition: transform 250ms ease-in-out
+  cursor: pointer
   @include after()
     //box-shadow: 0em 0em 1.25em 0em rgba(black, 0.4)
     transition: transform 250ms ease-in-out
     opacity: 0
   &:hover,
   &:focus
-    transform: scale(.9)
+    transform: scale(1.09)
     &::after
       opacity: 1
 

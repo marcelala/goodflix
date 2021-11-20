@@ -4,8 +4,10 @@ export default interface iMedia {
   iso_3166_1: string;
   key: string;
   title: string;
-  description: string;
+  overview: string;
   genre: string;
   size: string;
   site: string;
+  poster_path: string;
+  media_type: string;
 }
