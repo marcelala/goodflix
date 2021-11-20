@@ -52,6 +52,7 @@ export default function Hero() {
           </button>
         </div>
       </div>
+      <div className="fade" />
     </header>
   );
 }
