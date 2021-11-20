@@ -1,0 +1,45 @@
+#browse
+  position: relative
+
+  #hero
+    position: relative
+    color: white
+    object-fit: contain
+    height: 448px
+    margin: 0
+    .fade
+      background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.7),$dark)
+      height: 60%
+    .hero-contents
+      height: 190px
+      padding-top: 140px
+      margin-left: 30px
+      width: 45%
+      max-width: 360px
+      h1
+        font-size: 3rem
+        font-weight: 800
+        padding-bottom: .3rem
+      p
+        line-height: 1.3rem
+        padding-top: 1rem
+        font-size: .8rem
+        overflow: hidden
+
+      &-buttons
+        display: flex
+        flex-direction: row
+        margin-top: $space-medium
+        max-width: 360px
+        .play
+          background-color: white
+          color: $dark
+          &:hover
+            transition: all 0.2s
+            background-color: rgb(199, 197, 197)
+        .info
+          color: white
+          background-color: rgba(109, 109, 110, 0.7)
+          &:hover
+            transition: all 0.2s
+            background-color: rgba(190, 188, 188, 0.4)

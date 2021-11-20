@@ -1,0 +1,80 @@
+.background-wrapper
+  background-size: cover
+  display: block
+  min-height: 100vh
+  overflow: hidden
+  direction: ltr
+  position: absolute
+  opacity: 0.5
+  img
+    min-height: 100vh
+    border: 0
+
+
+#auth
+  display: grid
+  height: 100%
+  width: 100%
+  min-height: 100vh
+  margin: 0
+  background-color: transparent
+
+.form-wrapper
+  display: flex
+  flex-direction: column
+  height: auto
+  width: 100%
+  min-width: 320px
+  min-height: 660px
+  background-color: rgba(0, 0, 0, 0.75)
+  border-radius: 5px
+  margin: 8rem auto
+  max-width: 450px
+  padding: 60px 68px 40px
+  position: relative
+
+
+.form-title
+  color: #fff
+  font-size: 32px
+  font-weight: bold
+  margin-bottom: 28px
+
+
+.sign-form-error
+  background: #e87c03
+  border-radius: 4px
+  font-size: 14px
+  margin: 0 0 16px
+  color: white
+  padding: 15px 20px
+
+
+
+
+
+
+.btn-form
+  @include button
+.btn-form:disabled
+  opacity: 0.3
+
+
+.form-help, small
+  font-size: 13px
+  font-weight: 300
+  color: rgb(179, 179, 179)
+
+
+.form-link
+  color: rgb(179, 179, 179)
+  text-decoration: none
+  margin-right: 30px
+  cursor: pointer
+  text-decoration: none
+  margin-left: 5px
+
+
+.form-link:hover
+  text-decoration: underline
+
