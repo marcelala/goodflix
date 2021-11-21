@@ -7,12 +7,28 @@
     background-color: transparent
     margin: 0
     padding: 0
+
   img
     object-fit: contain
     width: 10rem
     height: auto
     border-radius: 4px
     @include hover-lift
+
+  span
+    text-transform: uppercase
+    color: white
+    width: 100%
+    height: 100%
+    max-height: 100%
+    z-index: 199
+    margin: $space-small
+    padding: $space-small
+    overflow: hidden
+    font-size: .6rem
+    font-family: $font
+    font-weight: 600
+    text-align: start
   &.top
     height: 100%
     width: auto

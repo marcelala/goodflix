@@ -1,6 +1,9 @@
 .video-modal
   height: 100%
   width: 100%
+  margin: 0
+  border-radius: 16px
+
 
 #preview
   width: 100%
@@ -11,27 +14,36 @@
   display: flex
   flex-direction: column
   justify-content: flex-end
+  border-radius: 16px
+
   .preview-overlay
     z-index: 65
     position: absolute
     display: flex
     flex-direction: column
-    padding: 0 $space-medium
+    padding: $space-large
     &-buttons
       display: flex
       flex-direction: row
     h2
       color: white
-      margin: $space-medium 0
+      margin: $space-large 0
       text-transform: uppercase
-      font-size: 1.3rem
+      font-size: 1.8rem
+      font-weight: 800
+      z-index: 99
+      letter-spacing: .1rem
 
 
   .fade
-    background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.7),$dark)
+    background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.7),$primary-3)
     height: 40%
     width: 100%
 
 .preview-content
-  padding: $space-medium
-  background-color: $dark
+  padding: $space-large
+  background-color: $primary-3
+  p
+    font-weight: 400
+    font-size: 1rem
+    width: 60%
