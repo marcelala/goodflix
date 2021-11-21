@@ -3,6 +3,7 @@ import axios from "scripts/axios";
 import requests from "../../scripts/requests";
 import { newMedia } from "../../types/newMedia";
 import Icon from "../../components/Icon";
+import truncate from "../../scripts/truncate";
 
 export default function Hero() {
   const [media, setMedia] = useState(newMedia);
@@ -20,12 +21,6 @@ export default function Hero() {
     }
     fetchData();
   }, []);
-
-  function truncate(string: string, number: number) {
-    const shortOverview =
-      string?.length > number ? string.substr(0, number - 1) + "..." : string;
-    return shortOverview;
-  }
 
   return (
     <header

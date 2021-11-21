@@ -1,20 +1,16 @@
 import { createContext, useContext } from "react";
-import {
-  DetailsTrailer,
-  Genre,
-  ShowOverview,
-  TrailerDisplayed,
-} from "interfaces/iPlayer";
+import { Genre, TrailerDisplayed } from "interfaces/iPlayer";
+import iMedia from "../interfaces/iMedia";
 
 export type PlayerContextType = {
   playing: {
-    playing: ShowOverview | null | undefined;
-    setPlaying: (playing?: ShowOverview | null | undefined) => void;
+    playing: iMedia | null | undefined;
+    setPlaying: (playing?: iMedia | null | undefined) => void;
   };
-  detailsTrailer: {
-    detailsTrailer: DetailsTrailer | null | undefined;
-    setDetailsTrailer: (detailsTrailer?: any) => void;
-  };
+  // detailsTrailer: {
+  //   detailsTrailer: DetailsTrailer | null | undefined;
+  //   setDetailsTrailer: (detailsTrailer?: any) => void;
+  // };
   isMuted: {
     isMuted: boolean;
     setIsMuted: (isMuted: boolean) => void;
@@ -44,10 +40,10 @@ export const PlayerContext = createContext<PlayerContextType>({
     playing: undefined,
     setPlaying: () => {},
   },
-  detailsTrailer: {
-    detailsTrailer: null,
-    setDetailsTrailer: () => {},
-  },
+  // detailsTrailer: {
+  //   detailsTrailer: null,
+  //   setDetailsTrailer: () => {},
+  // },
   isMuted: {
     isMuted: true,
     setIsMuted: () => {},

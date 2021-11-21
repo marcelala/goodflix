@@ -1,10 +1,7 @@
-import { useUserData } from "../../state/UserDataContext";
 import Hero from "./Hero";
 import requests from "../../scripts/requests";
-import Row from "components/row/Row";
+import Row from "pages/browse/row/Row";
 export default function Browse() {
-  const { userData } = useUserData();
-
   return (
     <main id={"browse"} className="browse">
       <Hero />

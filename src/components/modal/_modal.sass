@@ -1,0 +1,46 @@
+.portal
+  height: 100%
+  width: 100%
+
+.portal-wrapper
+  position: absolute
+  top: 0
+  left: 0
+  display: flex
+  justify-content: center
+  justify-items: center
+  align-items: center
+  width: 100vw
+  height: 100%
+  background-color: $dark
+  z-index: 5
+
+.modal-window
+  background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.7),$dark)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  z-index: 10
+  width: 80vw
+  height: 80vh
+  margin: $space-large
+  background-color: $dark
+
+.close-button
+  background-color: $dark
+  border-radius: 50%
+  width: 2.5rem
+  height: 2.5rem
+  font-size: 1.3rem
+  border: none
+  position: absolute
+  z-index: 70
+  padding: $space-x-small
+  top: 10%
+  right: 10%
+  margin: $space-x-small
+  color: white
+
+
+
+

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "scripts/axios";
-import Poster from "components/poster/Poster";
-import Top from "components/poster/Top";
-import iMedia from "../../interfaces/iMedia";
+import Poster from "pages/browse/poster/Poster";
+import Top from "pages/browse/poster/Top";
+import iMedia from "../../../interfaces/iMedia";
 
 interface iProps {
   rowTitle: string;

@@ -31,7 +31,7 @@ export default function Navigation() {
   return (
     <nav className="navigation nav-auth">
       <div className={`nav-content ${showBackground && "nav-content-black"}`}>
-        <ul>
+        <ul className="left-corner">
           <li>
             <NavLink to="/" className="logo">
               <img src={logo} alt="netflix" />
@@ -52,14 +52,20 @@ export default function Navigation() {
           <li>
             <NavLink to="/my-list">My List</NavLink>
           </li>
-          <div className="right-corner">
-            <li onClick={onLogout}>
-              <img src={avatar} alt={"avatar"} className="avatar" />
-            </li>
-            <li onClick={onLogout}>
-              <Icon fileName={"sign-out"} />
-            </li>
-          </div>
+        </ul>
+        <ul className="right-corner">
+          <li>
+            <Icon fileName={"search"} />
+          </li>
+          <li>
+            <Icon fileName={"bell"} />
+          </li>
+          <li>
+            <img src={avatar} alt={"avatar"} className="avatar" />
+          </li>
+          {/*<li onClick={onLogout}>*/}
+          {/*  <Icon fileName={"sign-out"} />*/}
+          {/*</li>*/}
         </ul>
       </div>
       <div className="fade" />
