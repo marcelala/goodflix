@@ -5,15 +5,22 @@ import Player from "./Player";
 import iMedia from "interfaces/iMedia";
 import fallback from "assets/images/authBanner.jpg";
 import Icon from "components/Icon";
+import { iTrailer } from "../../../interfaces/iTrailer";
 interface iProps {
   media: iMedia;
+  trailer: iTrailer;
 }
 
-export default function VideoModal({ media }: iProps) {
-  const [displayOverview, setDisplay] = useState(true);
+export default function VideoModal({ media, trailer }: iProps) {
+  const [play, setPlay] = useState(true);
   const baseURL = "https://image.tmdb.org/t/p/original";
   const posterObject = `${baseURL}${media.backdrop_path}`;
   const title = media.title || media.name || media.original_name;
+
+  function handleClick() {
+    setPlay(!play);
+  }
+
   return (
     <div className="video-modal">
       <header
@@ -24,16 +31,13 @@ export default function VideoModal({ media }: iProps) {
           backgroundPosition: "center center",
         }}
       >
-        {/*<Player*/}
-        {/*  video={""}*/}
-        {/*  onPlay={() => setDisplay(false)}*/}
-        {/*  onPause={() => setDisplay(true)}*/}
-        {/*/>*/}
-        {/*<img src={posterObject || fallback} alt={media.title} />*/}
+        {trailer.isLoaded && trailer.key !== null && (
+          <Player video={trailer.key} setPlay={setPlay} play={play} />
+        )}
         <div className="preview-overlay">
           <h2>{title}</h2>
           <div className="preview-overlay-buttons">
-            <button className={"btn-icon play"}>
+            <button className={"btn-icon play"} onClick={() => handleClick()}>
               {" "}
               <Icon fileName={"Play"} />
               Play
@@ -42,17 +46,9 @@ export default function VideoModal({ media }: iProps) {
         </div>
         <div className="fade" />
       </header>
-      {displayOverview && (
-        <div className="preview-content">
-          <h3>{media.release_date}</h3>
-          <p>{media.overview}</p>
-          {/*<Link className="play-button" to={`/video/${media.videoId}`}>*/}
-
-          {/*</Link>*/}
-        </div>
-      )}
-
-      {/*{media_type === "series" ? <>/!*list of episodes*!/</> : null}*/}
+      <div className="preview-content">
+        <p>{media.overview}</p>
+      </div>
     </div>
   );
 }

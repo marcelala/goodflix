@@ -1,36 +1,34 @@
 import YouTube from "react-youtube";
-import getYouTubeID from "get-youtube-id";
 
 interface iProps {
   video: string;
-  onPlay: any;
-  onPause: any;
+  setPlay: Function;
+  play: boolean;
 }
 const PLAYER_CONFIG = {
-  youtube: {
-    height: "390",
-    width: "100%",
-    playerVars: {
-      iv_load_policy: 3,
-      controls: 1,
-      loop: 1,
-    },
+  playerVars: {
+    autoplay: 1,
+    iv_load_policy: 3,
+    controls: 1,
+    loop: 1,
+    modestbranding: 1,
+    disablekb: 1,
+    showinfo: 1,
   },
 };
 
-export default function Player({ video, onPause, onPlay }: iProps) {
-  const youtubeId = getYouTubeID(video);
+export default function Player({ video, setPlay }: iProps) {
   return (
-    <div id={"video-player"}>
+    <>
       <YouTube
-        videoId={youtubeId || ""}
+        videoId={video || ""}
         className="video"
         containerClassName="player"
-        onPlay={onPlay}
-        onPause={onPause}
+        onPlay={() => setPlay(true)}
+        onPause={() => setPlay(false)}
         // @ts-ignore
         opts={PLAYER_CONFIG}
       />
-    </div>
+    </>
   );
-}
+} // @ts-ignore
