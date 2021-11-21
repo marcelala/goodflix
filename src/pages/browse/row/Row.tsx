@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "scripts/axios";
-import Poster from "components/poster/Poster";
-import Top from "components/poster/Top";
-import iMedia from "../../interfaces/iMedia";
+import Poster from "pages/browse/poster/Poster";
+import Top from "pages/browse/poster/Top";
+import iMedia from "interfaces/iMedia";
+import Icon from "components/Icon";
 
 interface iProps {
   rowTitle: string;
@@ -14,7 +15,6 @@ const initialState: iMedia[] = [];
 export default function Row({ rowTitle, fetchURL, isTop }: iProps) {
   //@ts-ignore
   const [media, setMedia] = useState(initialState);
-
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchURL);
@@ -27,14 +27,19 @@ export default function Row({ rowTitle, fetchURL, isTop }: iProps) {
     <Poster media={item} baseURL={fetchURL} key={item.id} />
   ));
 
-  const TopPosters = media.map((item) => (
-    <Top media={item} baseURL={fetchURL} key={item.id} />
+  const TopPosters = media.slice(0, 10).map((item, index) => (
+    <div key={item.id} className="rank">
+      <Icon fileName={`rank${(index + 1).toString()}`} />
+      <Top media={item} baseURL={fetchURL} />
+    </div>
   ));
 
   return (
-    <section id="row">
-      <h2>{rowTitle}</h2>
-      {isTop ? <ul>{TopPosters}</ul> : <ul>{Posters}</ul>}
-    </section>
+    <>
+      <section id="row">
+        <h2>{rowTitle}</h2>
+        {isTop ? <ul className="tops">{TopPosters}</ul> : <ul>{Posters}</ul>}
+      </section>
+    </>
   );
 }

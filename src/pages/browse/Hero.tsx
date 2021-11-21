@@ -3,6 +3,8 @@ import axios from "scripts/axios";
 import requests from "../../scripts/requests";
 import { newMedia } from "../../types/newMedia";
 import Icon from "../../components/Icon";
+import truncate from "../../scripts/truncate";
+import getRandom from "../../scripts/getRandom";
 
 export default function Hero() {
   const [media, setMedia] = useState(newMedia);
@@ -13,19 +15,13 @@ export default function Hero() {
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);
       const results = request.data.results;
-      const randomMedia =
-        results[Math.floor(Math.random() * results.length - 1)];
+      const randomMedia = await getRandom(results);
+      //results[Math.floor(Math.random() * results.length - 1)];
       setMedia(randomMedia);
       return randomMedia;
     }
     fetchData();
   }, []);
-
-  function truncate(string: string, number: number) {
-    const shortOverview =
-      string?.length > number ? string.substr(0, number - 1) + "..." : string;
-    return shortOverview;
-  }
 
   return (
     <header

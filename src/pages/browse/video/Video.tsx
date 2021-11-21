@@ -9,7 +9,7 @@ interface iProps {
 export default function Video({ video, autoplay, controls }: iProps) {
   const youtubeId = getYouTubeID(video);
   return (
-    <li id={"video-player"}>
+    <div id={"video-player"}>
       <iframe
         src={`https://www.youtube.com/embed/${youtubeId}?autoplay=${autoplay}&mute=${autoplay}&showinfo=0&controls=${controls}`}
         frameBorder="0"
@@ -17,6 +17,6 @@ export default function Video({ video, autoplay, controls }: iProps) {
         allowFullScreen
         title="video"
       />
-    </li>
+    </div>
   );
 }

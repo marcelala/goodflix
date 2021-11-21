@@ -1,3 +1,5 @@
+import { iTrailer } from "./iTrailer";
+
 export default interface iMedia {
   id: string;
   iso_639_1: string;
@@ -8,9 +10,10 @@ export default interface iMedia {
   original_name?: string;
   overview: string;
   genre: string;
-  size: string;
-  site: string;
-  poster_path: string;
+  poster_path: string | null;
   media_type: string;
-  backdrop_path: string;
+  backdrop_path: string | null;
+  vote_average?: number;
+  release_date: string;
+  trailer?: iTrailer;
 }

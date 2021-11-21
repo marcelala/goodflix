@@ -1,5 +1,5 @@
 import React from "react";
-import Browser from "./components/Browser";
+import Browser from "./routes/Browser";
 
 function App() {
   return (

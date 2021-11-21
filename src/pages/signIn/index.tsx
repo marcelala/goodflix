@@ -16,7 +16,7 @@ const checkboxOptions = { key: "remember", label: "Remember me" };
 export default function SignIn() {
   // Global state
   const history = useHistory();
-  const { setUserData, userData } = useUserData();
+  const { setUserData } = useUserData();
   const { setIsAuthenticated, isAuthenticated, uid } = useAuthentication();
   // Local state
   const loginFields = require("./fields-login.json");

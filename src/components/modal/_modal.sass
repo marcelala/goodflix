@@ -1,0 +1,45 @@
+.portal
+  height: 100%
+  width: 100%
+
+.portal-wrapper
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  background-color: rgba(37,37,37,.9)
+  z-index: 55
+  width: 100%
+
+.modal-window
+  //background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.7),$dark)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  z-index: 100
+  width: 90vw
+  height: 100vh
+  margin: $space-large auto
+  border-radius: 16px
+  background-color: $dark
+
+.close-button
+  background-color: $primary-3
+  border-radius: 50%
+  width: 2.5rem
+  height: 2.5rem
+  font-size: 1.8rem
+  border: none
+  position: absolute
+  z-index: 99
+  top: 8%
+  right: 8%
+  color: white
+  transition: all 459ms
+  cursor: pointer
+  align-content: center
+  &:hover
+    transform: scale(1.02)
+
+

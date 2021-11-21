@@ -8,9 +8,8 @@ export const newMedia: iMedia = {
   title: "",
   overview: "",
   genre: "",
-  size: "",
-  site: "",
   poster_path: "",
   media_type: "",
   backdrop_path: "",
+  release_date: "",
 };

@@ -1,0 +1,66 @@
+.video-modal
+  height: 100%
+  width: 100%
+  margin: 0 auto
+  border-radius: 16px
+  scroll-behavior: smooth
+  overflow-y: scroll
+
+
+#preview
+  width: 100%
+  position: relative
+  object-fit: contain
+  height: 300px
+  max-height: 600px
+  margin: 0
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  border-radius: 16px
+
+  .preview-overlay
+    z-index: 65
+    position: absolute
+    display: flex
+    flex-direction: column
+    padding: $space-large
+    &-buttons
+      display: flex
+      flex-direction: row
+    h2
+      color: white
+      margin: $space-large 0
+      text-transform: uppercase
+      font-size: 1.8rem
+      font-weight: 800
+      z-index: 99
+      letter-spacing: .1rem
+      text-shadow: 2px 1px 3px #000
+
+  .fade
+    background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.7),$primary-3)
+    height: 40%
+    width: 100%
+    z-index: 100
+
+.preview-content
+  padding: $space-large
+  background-color: $primary-3
+  p
+    font-weight: 400
+    font-size: 1rem
+    width: 100%
+    padding: 2rem 0
+
+.player
+  width: 100%
+  height: 100%
+  object-fit: cover
+  position: absolute
+  z-index: 99
+  .video
+    width: 100%
+    overflow: hidden
+    height: 100%
+    object-fit: contain
