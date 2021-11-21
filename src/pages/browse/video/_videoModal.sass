@@ -1,8 +1,10 @@
 .video-modal
   height: 100%
   width: 100%
-  margin: 0
+  margin: 0 auto
   border-radius: 16px
+  scroll-behavior: smooth
+  overflow-y: scroll
 
 
 #preview
@@ -33,7 +35,7 @@
       font-weight: 800
       z-index: 99
       letter-spacing: .1rem
-
+      text-shadow: 2px 1px 3px #000
 
   .fade
     background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.7),$primary-3)
@@ -46,4 +48,5 @@
   p
     font-weight: 400
     font-size: 1rem
-    width: 60%
+    width: 100%
+    padding: 2rem 0

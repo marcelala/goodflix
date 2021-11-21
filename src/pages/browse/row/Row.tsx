@@ -37,7 +37,7 @@ export default function Row({ rowTitle, fetchURL, isTop }: iProps) {
   return (
     <section id="row">
       <h2>{rowTitle}</h2>
-      {isTop ? <ul>{TopPosters}</ul> : <ul>{Posters}</ul>}
+      {isTop ? <ul className="tops">{TopPosters}</ul> : <ul>{Posters}</ul>}
     </section>
   );
 }

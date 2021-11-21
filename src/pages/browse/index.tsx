@@ -8,7 +8,6 @@ export default function Browse() {
 
       <section id="rows">
         <Row rowTitle="Popular on Netflix" fetchURL={requests.fetchTrending} />
-        <Row rowTitle="Trending Now" fetchURL={requests.fetchTrending} />
         <Row
           rowTitle="Top 10 in Sweden Today"
           fetchURL={requests.fetchNetflixOriginals}

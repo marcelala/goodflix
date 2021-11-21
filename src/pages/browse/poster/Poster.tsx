@@ -19,7 +19,6 @@ export default function Poster({ media }: iProps) {
       <button onClick={() => setModalOpen(true)}>
         <img src={posterObject || fallback} alt={title} />
       </button>
-      <span>{title}</span>
       <Modal openModal={openModal} setModalOpen={setModalOpen}>
         <VideoModal media={media} />
       </Modal>
