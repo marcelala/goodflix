@@ -30,9 +30,15 @@
     margin-top: 0
     width: auto
     img
-      height: 3rem
+      height: 1.5rem
       width: auto
       margin: 0
-      padding: $space-x-small
+      padding: 0 $space-x-small
       z-index: 55
-
+    &.play
+      background-color: white
+      color: $dark
+      z-index: 1
+      &:hover
+        transition: all 0.2s
+        background-color: rgb(199, 197, 197)

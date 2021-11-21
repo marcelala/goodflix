@@ -11,9 +11,21 @@
   display: flex
   flex-direction: column
   justify-content: flex-end
-  h2
-    color: white
+  .preview-overlay
     z-index: 65
+    position: absolute
+    display: flex
+    flex-direction: column
+    padding: 0 $space-medium
+    &-buttons
+      display: flex
+      flex-direction: row
+    h2
+      color: white
+      margin: $space-medium 0
+      text-transform: uppercase
+      font-size: 1.3rem
+
 
   .fade
     background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.7),$dark)

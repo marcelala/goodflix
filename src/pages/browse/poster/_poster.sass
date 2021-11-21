@@ -1,10 +1,12 @@
 .row-poster
-  margin-right: $space-x-small
   height: 100%
   width: 100%
+  padding: 0 $space-x-small
   button
     border: none
     background-color: transparent
+    margin: 0
+    padding: 0
   img
     object-fit: contain
     width: 10rem
@@ -12,10 +14,15 @@
     border-radius: 4px
     @include hover-lift
   &.top
+    height: 100%
+    width: auto
+    display: flex
+    padding: 0
     img
-      width: 5rem
-      height: auto
+      width: auto
+      height: 100%
+      padding: 0
+      object-fit: contain
       border-top-left-radius: 0
       border-bottom-left-radius: 0
-
-
+      margin: 0
