@@ -23,10 +23,13 @@ export default function Row({ rowTitle, fetchURL, isTop }: iProps) {
     }
     fetchData();
   }, [fetchURL]);
+
   const Posters = media.map((item) => (
     <Poster media={item} baseURL={fetchURL} key={item.id} />
   ));
 
+  // Refactoring -1 // Why there is a component called Poster but not one for TopPoster
+  // I see something called <Top/> why don't Top also includes this div and icon tags?
   const TopPosters = media.slice(0, 10).map((item, index) => (
     <div key={item.id} className="rank">
       <Icon fileName={`rank${(index + 1).toString()}`} />
@@ -34,6 +37,7 @@ export default function Row({ rowTitle, fetchURL, isTop }: iProps) {
     </div>
   ));
 
+  // Dont use <> when you are returning 1 tag anyways. In this case the <section> -1
   return (
     <>
       <section id="row">

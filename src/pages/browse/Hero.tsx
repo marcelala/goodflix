@@ -37,7 +37,8 @@ export default function Hero() {
         <p>{truncate(media.overview, 150)}</p>
         <div className="hero-contents-buttons">
           <button className={"btn-icon play"}>
-            {" "}
+            {/* CSS -1 you the property padding left to add this space, this looks like a hack and recruiters don't like it */}
+            {/* (thust me on that one, one person at Instabox really hated the idea of adding one empty div even with a class called spacer to separate eleemnts from left to right like is done in SwiftUI in iOS) */}{" "}
             <Icon fileName={"Play"} />
             Play
           </button>

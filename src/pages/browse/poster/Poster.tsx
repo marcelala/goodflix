@@ -5,10 +5,13 @@ import Modal from "../../../components/modal/Modal";
 import { useState } from "react";
 import { FindTrailer } from "../../../scripts/findTrailer";
 import { newTrailer } from "../../../types/newTrailer";
+
 interface iProps {
   media: iMedia;
   baseURL: string;
 }
+
+// This is a good, well designed compoennt.
 export default function Poster({ media }: iProps) {
   const baseURL = "https://image.tmdb.org/t/p/original";
   const posterObject = `${baseURL}${media.backdrop_path}`;

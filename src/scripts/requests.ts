@@ -1,5 +1,26 @@
 const API_KEY = "af4d66ef9311891007749a9dab0713b3";
 
+/**
+ * Big O Notation -1
+ *
+ * This is over engineering at its finest. Each time the tv/movies producers come up with a new category,
+ * we need to recompile the project and publish it in order to get this info.
+ *
+ * Plus you are using a pagination system that we never requested. I do like when students go the extra mile to learn new stuff.
+ * But those features should be added after the minimun features are done and tested. Again is better to have 5 solid features than 10 acceptable ones.
+ *
+ * A solution for the recompile problem would be:
+ * 1. Create a collection folder in firebase where each document correspond to a one of these request categories. Something like:
+ * categories/
+ *  documentId: "grijeogojeqrgoijqer"
+ *    name: "Tredning",
+ *    url: "/all/week"
+ *  documentId: "vfvjiodfiovrger[pw"
+ *    name: "Netflix Originals",
+ *    url: "discover/tv"
+ *
+ * 2. Fetch this list as an array and create the categories on the fly on the frontend.
+ */
 const requests = {
   fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
   fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useData } from "../state/DataContext";
 import { getCollection } from "../firebaseServices/firestore";
 
+// This can be a TypeScript file as well (no points taken)
 export default function useFetch(path) {
   const [content, setContent] = useState([]);
   const [error, setError] = useState(null);

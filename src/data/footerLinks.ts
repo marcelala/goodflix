@@ -1,3 +1,4 @@
+// Don't use JavaScript objevts for information, use JSON -1
 export const footerLinks = [
   { id: 1, text: "FAQ", url: "https://help.netflix.com/support/412" },
   { id: 2, text: "Help Center", url: "https://help.netflix.com/" },

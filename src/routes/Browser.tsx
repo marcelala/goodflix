@@ -13,12 +13,14 @@ import AuthenticatedRoute from "./AuthenticatedRoute";
 import NavigationUnauth from "../components/navigation/NavigationUnauth";
 
 export default function Browser() {
-  //const { userData } = useUserData();
+  //const { userData } = useUserData(); // no commented code in production -1
   const { isAuthenticated } = useAuthentication();
 
   //const admin = userData.userRole === "admin";
   //const HomePage = admin ? AdminHome : Home;
+  // Naming: Don't use abreviations, that being said the idea of switching navigation bars based on login status is clever!
   const Nav = isAuthenticated ? Navigation : NavigationUnauth;
+
   return (
     <UserDataProvider>
       <BrowserRouter>

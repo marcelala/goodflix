@@ -1,12 +1,15 @@
 import Hero from "./Hero";
 import requests from "../../scripts/requests";
 import Row from "pages/browse/row/Row";
+
 export default function Browse() {
   return (
     <main id={"browse"} className="browse">
       <Hero />
 
+      {/* Code duplication -1. Please see comment on request.ts for more info about it. */}
       <section id="rows">
+        
         <Row rowTitle="Popular on Netflix" fetchURL={requests.fetchTrending} />
         <Row
           rowTitle="Top 10 in Sweden Today"

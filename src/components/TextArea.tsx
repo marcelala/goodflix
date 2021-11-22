@@ -17,6 +17,7 @@ interface iProps {
   state: any;
 }
 
+// Why there is a TextArea in the project? I dont see anyone importing it?
 export default function TextArea({ onChange, settings, state }: iProps) {
   const {
     key,
